@@ -1,0 +1,42 @@
+SHELL_1 README
+
+--------------
+HOW TO COMPILE
+--------------
+To compile, run the command
+	
+	make <xxx>
+
+where <xxx> is one of the following
+
+	33sh
+	33noprompt
+	all
+
+To clean up executables, run
+	
+	make clean
+
+
+---------
+STRUCTURE
+---------
+I abstracted the main loop into two parts.
+
+In sh.c, I set up an infinite loop that gets input from STDIN and attempts
+to execute that input as a command.
+
+In parser.c, we read input from STDIN and attempt to parse it as a command.
+
+In executor.c, we take our parsed command and attempt to execute it. Note
+that if we encounter errors while parsing, we skip attempting to execute and 
+instead prompt for input again.
+
+
+----
+BUGS
+----
+My program passes all tests in the /course/cs0330/pub/shell_1 directory.
+
+I have no known bugs, although sometimes my error messages differ slightly
+from those of the demo.
